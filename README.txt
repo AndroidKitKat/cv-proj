@@ -42,12 +42,13 @@ a video would be a sufficient replacement. Here is a link to the video:
 
 `python3 main.py`
 
-To , you can download the final archive of all images with their best 
-match from the internet. This archive is located at: 
+Bonus:
+You can download an archive containing all of our results (processed images) from 
+the internet. This archive is located at: 
 https://www.michaeleisemann.com/assets/cv/fin_images.tar.gz
 
+To download the archive:
 `curl https://www.michaeleisemann.com/assets/cv/fin_images.tar.gz > fin_images.tar.gz`
 
-To extract the final data:
-
+To extract our results from the downloaded archive:
 `tar -xzvf fin_images.tar.gz`
