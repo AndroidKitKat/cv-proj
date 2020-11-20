@@ -38,9 +38,18 @@ a video would be a sufficient replacement. Here is a link to the video:
 
 `conda activate billdings`
 
-4. To run our project, run the included Python script:
+4. To run our project, run the included Python script. This will take roughly
+one minute. Note that we included a small subset of our database for this demo in order
+to speed up run time.
 
 `python3 main.py`
+
+5. When the result is determined, the best-match image name and the number of keypoint
+matches found will be printed to the terminal. In the working directory, there will be
+4 new images. Each image displays the keypoint matches found when comparing the test
+images to one of the images in the database. This should hopefully allow you to get a
+good sense of what our results look like both when comparing a two images of the same
+building and when comparing two images of different buildings.
 
 Bonus:
 You can download an archive containing all of our results (processed images) from 
