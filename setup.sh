@@ -36,9 +36,9 @@ extract_the_stuff() {
 }
 
 check_tools
-check_and_download
-extract_the_stuff "/tmp/Unknown.zip"
-extract_the_stuff "/tmp/Training.zip"
+# check_and_download
+# extract_the_stuff "/tmp/Unknown.zip"
+# extract_the_stuff "/tmp/Training.zip"
 
 # set up anaconda
 conda env create --file=billdings.yaml
