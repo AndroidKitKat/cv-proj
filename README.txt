@@ -19,7 +19,7 @@ curl
 1. Download the .zip file from this repository, unzip it, and navigate to the 
 `cv-proj-master` directory in anaconda.
 
-2. Setup the anaconda environment
+2. Setup the anaconda environment:
 
 `conda env create --file=billdings.yaml`
 
@@ -34,11 +34,11 @@ attempt to test this project on a Windows machine and it does not work, we again
 apologize and have attached a video of us running the demo locally in hopes that such
 a video would be a sufficient replacement. Here is a link to the video:
 
-3. Activate the anaconda environment
+3. Activate the anaconda environment:
 
 `conda activate billdings`
 
-4. Run Python script
+4. Run Python script:
 
 `python3 main.py`
 
