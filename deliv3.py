@@ -2,20 +2,25 @@ import cv2 as cv
 import numpy as np
 import os
 import argparse
+import json
+
 
 # p = argparse.ArgumentParser()
 # p.add_argument("image", help="Path to image file")
 # args = p.parse_args()
 # print(args.image)
 
-unknown_images = [f for f in os.listdir('mass_data/Unknown')]
-training_images = [f for f in os.listdir('mass_data/Training')]
-f = open('data.txt', 'w')
-m = open('matches.txt', 'w')
+data = {}
 
+base_dir = 'mass_data/'
+
+unknown_images = [f for f in os.listdir('mass_data/Unknown/')]
+training_images = [f for f in os.listdir('mass_data/Training/')]
+f = open('data.txt', 'w')
+print(unknown_images)
 
 for valid_pic in unknown_images:
-    img1 = cv.imread(valid_pic, cv.IMREAD_GRAYSCALE)
+    img1 = cv.imread(base_dir + 'Unknown/' + valid_pic, cv.IMREAD_GRAYSCALE)
     # load img2 in a f0r loop
     minHessian = 400
     detector = cv.xfeatures2d_SURF.create(hessianThreshold=minHessian)
@@ -29,8 +34,12 @@ for valid_pic in unknown_images:
     kp2, d2 = 0, 0
     img_matches = None
     for train_pic in training_images:
-        img2 = cv.imread(train_pic, cv.IMREAD_GRAYSCALE)
+        training_path = base_dir + 'Training/' + train_pic
+        img2 = cv.imread(base_dir + 'Training/' + train_pic, cv.IMREAD_GRAYSCALE)
         kp2, d2 =  detector.detectAndCompute(img2, None)
+        # caching this data is prohibitive...
+
+
         knn_matches = matcher.knnMatch(d1, d2, 2)
         good_matches = []
         ratio_thresh = 0.5
@@ -43,12 +52,10 @@ for valid_pic in unknown_images:
             image_match = train_pic
         img_matches = np.empty((max(img1.shape[0], img2.shape[0]), img1.shape[1]+img2.shape[1], 3), dtype=np.uint8)
         cv.drawMatches(img1, kp1, img2, kp2, good_matches, img_matches, flags=cv.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
-        cv.imwrite(image_match + ' and ' + valid_pic + '.jpg', img_matches)
+        cv.imwrite('output/' + image_match + ' and ' + valid_pic + '.jpg', img_matches)
     print('Best match for {}: {} with {} matches'.format(valid_pic, image_match, max_matches))
     f.write('Best match for {}: {} with {} matches.\n'.format(valid_pic, image_match, max_matches))
-    m.write('{}\n'.format(any_good_matches))
     img_matches = np.empty((max(img1.shape[0], img2.shape[0]), img1.shape[1]+img2.shape[1], 3), dtype=np.uint8)
     cv.drawMatches(img1, kp1, img2, kp2, good_matches, img_matches, flags=cv.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
-    cv.imwrite(image_match + ' and ' + valid_pic + '.jpg', img_matches)
-#f.close()
-#m.close()
+    cv.imwrite('output/' + 'BEST_' + image_match + '_and_' + valid_pic + '.jpg', img_matches)
+f.close()
