@@ -5,6 +5,14 @@ Final Project -- Campus Building Recognizer
 Matthew Siciliano and Michael Eisemann
 
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+|    D E P E N D E N C I E S    |
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+anaconda: https://www.anaconda.com
+curl
+~2GB of hard drive space (for datasets and anaconda install)
+
 -=-=-=-=-=-=-=-=-=-
 |    S E T U P    |
 -=-=-=-=-=-=-=-=-=-
