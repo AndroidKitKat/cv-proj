@@ -16,7 +16,9 @@ curl
 |    S E T U P    |
 -=-=-=-=-=-=-=-=-=-
 
-1. Setup the anaconda environment
+1. Download the .zip file from this repository, unzip it, and navigate to the `cv-proj-master` directory in anaconda.
+
+2. Setup the anaconda environment
 
 `conda env create --file=billdings.yaml`
 
