@@ -1,8 +1,6 @@
-# import cv2 as cv
+import cv2 as cv
 import numpy as np
 import os
-import argparse
-import json
 
 base_dir = 'mass_data/'
 
