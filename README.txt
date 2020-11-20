@@ -23,6 +23,17 @@ curl
 
 `conda env create --file=billdings.yaml`
 
+NOTE: We had a great deal of trouble getting the SURF dependencies in order. The only
+way we were able to do so was by asking a friend of ours who does CV research for his
+Conda environment. We have attempted to trim as many unnecessary dependencies as we
+can, but there are still quite a few dependencies, and attempting to remove more 
+invariably breaks our project. We also are not certain if our conda environment will 
+set up correctly on a Windows machine, as neither of us have access to one. We
+apologize for any inconvenience caused by needing to download dependencies. If you
+attempt to test this project on a Windows machine and it does not work, we again
+apologize and have attached a video of us running the demo locally in hopes that such
+a video would be a sufficient replacement. Here is a link to the video:
+
 3. Run Python script
 
 `python3 main.py`
