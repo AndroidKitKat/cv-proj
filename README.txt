@@ -38,7 +38,7 @@ a video would be a sufficient replacement. Here is a link to the video:
 
 `conda activate billdings`
 
-4. Run Python script:
+4. To run our project, run the included Python script:
 
 `python3 main.py`
 
