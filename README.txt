@@ -34,7 +34,11 @@ attempt to test this project on a Windows machine and it does not work, we again
 apologize and have attached a video of us running the demo locally in hopes that such
 a video would be a sufficient replacement. Here is a link to the video:
 
-3. Run Python script
+3. Activate the anaconda environment
+
+`conda activate billdings`
+
+4. Run Python script
 
 `python3 main.py`
 
