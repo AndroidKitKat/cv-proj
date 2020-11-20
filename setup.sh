@@ -21,13 +21,13 @@ check_and_download() {
     # download the unknown data from my server...
     if ! [ -e "/tmp/Unknown.zip" ]; then
         echo "Downloading unknown set from the internet..."
-        curl -v "https://www.michaeleisemann.com/assets/cv/Unknown.zip" > /tmp/Unknown.zip
+        curl "https://www.michaeleisemann.com/assets/cv/Unknown.zip" > /tmp/Unknown.zip
     fi
 
     # download the traning data from my server...
     if ! [ -e "/tmp/Training.zip" ]; then
         echo "Downloading training data set from the internet..."
-        curl -v "https://www.michaeleisemann.com/assets/cv/Training.zip" > /tmp/Training.zip
+        curl "https://www.michaeleisemann.com/assets/cv/Training.zip" > /tmp/Training.zip
     fi    
 }
 

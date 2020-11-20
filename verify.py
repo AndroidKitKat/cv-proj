@@ -1,23 +1,16 @@
-import cv2 as cv
+# import cv2 as cv
 import numpy as np
 import os
 import argparse
 import json
-
-
-# p = argparse.ArgumentParser()
-# p.add_argument("image", help="Path to image file")
-# args = p.parse_args()
-# print(args.image)
-
-data = {}
 
 base_dir = 'mass_data/'
 
 unknown_images = [f for f in os.listdir('mass_data/Unknown/')]
 training_images = [f for f in os.listdir('mass_data/Training/')]
 f = open('data.txt', 'w')
-print(unknown_images)
+print('Unknown Data:{}'.format(unknown_images))
+print('Training Data:{}'.format(training_images))
 
 for valid_pic in unknown_images:
     img1 = cv.imread(base_dir + 'Unknown/' + valid_pic, cv.IMREAD_GRAYSCALE)
