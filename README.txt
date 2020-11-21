@@ -41,7 +41,7 @@ https://youtu.be/5lbeivUn7KQ
 
 4. To run our project, run the included Python script. This should take less than 30
 seconds. Note that we included a small subset of our database for this demo in order
-to speed up run time.
+to speed up run time and decrease the download size.
 
 `python3 main.py`
 
